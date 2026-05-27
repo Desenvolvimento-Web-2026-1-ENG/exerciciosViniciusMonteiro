@@ -1,30 +1,77 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <title>página</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato do Cliente - Suporte Técnico Backend</title>
 </head>
+
 <body>
-    <div id="cabecalho">
-        <div class="titulo">Área de Contato do Cliente</div>
-        <div class="menu">
-            <a href="#">Ajuda</a> | <a href="#">Sair</a>
-        </div>
-    </div>
+    <header id="cabecalho">
+        <h1>Área de Contato do Cliente</h1>
 
-    <div id="corpo-da-pagina">
-        <div class="subtitulo">Envie sua mensagem para a nossa equipe de suporte backend</div>
-        
-        <form action="/enviar" method="GET">
-            Nome: <input type="text" name="nome"><br><br>
-            Email: <input type="text" name="email"><br><br>
-            Telefone Celular: <input type="text" name="celular"><br><br>
-            Mensagem: <textarea name="msg"></textarea><br><br>
-            
-            <input type="button" value="Disparar Dados">
-        </form>
-    </div>
+        <nav>
+            <a href="#">Ajuda</a> |
+            <a href="#">Sair</a>
+        </nav>
+    </header>
 
-    <div id="rodape">
-        Suporte Tech 2026
-    </div>
+    <main id="corpo-da-pagina">
+
+        <article>
+            <h2>Envie sua mensagem para a nossa equipe de suporte backend</h2>
+
+            <form action="/enviar" method="POST">
+
+                <label for="nome">Nome:</label>
+                <input 
+                    type="text" 
+                    id="nome" 
+                    name="nome" 
+                    required
+                >
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required
+                >
+                <br><br>
+
+                <label for="celular">Telefone Celular:</label>
+                <input 
+                    type="text" 
+                    id="celular" 
+                    name="celular"
+                    pattern="[0-9]{11}"
+                    placeholder="22999998888"
+                    title="Digite apenas números no formato DDD + 9 dígitos"
+                >
+                <br><br>
+
+                <label for="msg">Mensagem:</label>
+                <textarea 
+                    id="msg" 
+                    name="msg"
+                    required
+                ></textarea>
+                <br><br>
+
+                <button type="submit">
+                    Disparar Dados
+                </button>
+
+            </form>
+        </article>
+
+    </main>
+
+    <footer id="rodape">
+        <p>Suporte Tech 2026</p>
+    </footer>
+
 </body>
 </html>
